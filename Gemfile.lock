@@ -1,0 +1,16 @@
+PATH
+  remote: .
+  specs:
+    reset-sim (1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    rake (10.3.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  rake
+  reset-sim!
