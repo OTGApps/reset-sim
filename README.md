@@ -1,6 +1,6 @@
 # reset-sim
 
-TODO: Write a gem description
+Adds a command to terminal that lets you easily reset the iOS Simulator
 
 ## Installation
 
@@ -18,7 +18,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Add your terminal application to System Preferences, Privacy, Accessability options.
+
+Then run `reset-sim` to reset the simulator.
+
+![System Preferences](/screenshot.png)
 
 ## Contributing
 
