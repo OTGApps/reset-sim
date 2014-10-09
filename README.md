@@ -2,6 +2,8 @@
 
 Adds a command to terminal that lets you easily reset the iOS Simulator
 
+Tested on Yosemite (14A386a). Any other Mac OS, YMMV.
+
 ## Installation
 
 Add this line to your application's Gemfile:
