@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
 
 ********* IMPORTANT *********
 In order to work properly you must add your terminal application in
-System Preferences -> Privacy -> Accessability options.
+System Preferences -> Privacy -> Accessibility options.
 
 Then run: reset-sim
 *****************************

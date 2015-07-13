@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-Add your terminal application to System Preferences, Privacy, Accessability options.
+Add your terminal application to System Preferences, Privacy, Accessibility options.
 
 Then run `reset-sim` to reset the simulator.
 
