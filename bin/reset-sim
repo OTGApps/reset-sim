@@ -5,15 +5,20 @@ def osascript(script)
 end
 
 osascript <<-END
-    tell application "iOS Simulator"
+    set appName to "iOS Simulator"
+    if application "Simulator" is running then
+        set appName to "Simulator"
+    end
+
+    tell application appName
         activate
     end tell
 
     tell application "System Events"
-        tell process "iOS Simulator"
+        tell process appName
             tell menu bar 1
-                tell menu bar item "iOS Simulator"
-                    tell menu "iOS Simulator"
+                tell menu bar item appName
+                    tell menu appName
                         click menu item "Reset Content and Settings…"
                     end tell
                 end tell
