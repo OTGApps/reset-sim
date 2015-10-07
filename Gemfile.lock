@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    reset-sim (1.0)
+    reset-sim (1.1)
 
 GEM
   remote: https://rubygems.org/
@@ -14,3 +14,6 @@ PLATFORMS
 DEPENDENCIES
   rake
   reset-sim!
+
+BUNDLED WITH
+   1.10.4
