@@ -5,43 +5,38 @@ def osascript(script)
 end
 
 osascript <<-END
-    tell application "iOS Simulator"
-        activate
-    end tell
 
-    tell application "System Events"
-        tell process "iOS Simulator"
-            tell menu bar 1
-                tell menu bar item "iOS Simulator"
-                    tell menu "iOS Simulator"
-                        click menu item "Reset Content and Settings…"
+    -- assume most people are on xcode7 or greater
+    -- so try that first
+    set simulator_app_name to missing value
+    try
+        tell application "Simulator" to activate
+        set simulator_app_name to "Simulator"
+    on error number -1728
+        log "Trying legacy iOS Simulator application..."
+        try
+            tell application "iOS Simulator" to activate
+            set simulator_app_name to "iOS Simulator"
+        on error number -1728
+            log "No Simulator application installed"
+        end try
+    end try
+
+
+    if simulator_app_name is not equal to missing value
+        tell application "System Events"
+            tell process simulator_app_name
+                tell menu bar 1
+                    tell menu bar item simulator_app_name
+                        tell menu simulator_app_name
+                            click menu item "Reset Content and Settings…"
+                        end tell
                     end tell
                 end tell
-            end tell
-            tell window 1
-                click button "Reset"
-            end tell
-        end tell
-    end tell
-END
-
-osascript <<-END
-    tell application "Simulator"
-        activate
-    end tell
-
-    tell application "System Events"
-        tell process "Simulator"
-            tell menu bar 1
-                tell menu bar item "Simulator"
-                    tell menu "Simulator"
-                        click menu item "Reset Content and Settings…"
-                    end tell
+                tell window 1
+                    click button "Reset"
                 end tell
             end tell
-            tell window 1
-                click button "Reset"
-            end tell
         end tell
-    end tell
+    end if
 END
