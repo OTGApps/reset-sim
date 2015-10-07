@@ -8,6 +8,7 @@ osascript <<-END
 
     -- assume most people are on xcode7 or greater
     -- so try that first
+    set simulator_app_name to missing value
     try
         tell application "Simulator" to activate
         set simulator_app_name to "Simulator"
@@ -18,12 +19,11 @@ osascript <<-END
             set simulator_app_name to "iOS Simulator"
         on error number -1728
             log "No Simulator application installed"
-            set simulator_app_name to "Nothing"
         end try
     end try
 
 
-    if contents of simulator_app_name is not equal to "Nothing"
+    if simulator_app_name is not equal to missing value
         tell application "System Events"
             tell process simulator_app_name
                 tell menu bar 1
