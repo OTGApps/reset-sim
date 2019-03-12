@@ -25,7 +25,7 @@ osascript <<-END
 
     if simulator_app_name is not equal to missing value
         tell application "System Events"
-		    click menu item ¬
+            click menu item ¬
                 "Erase All Content and Settings…" of menu 1 of menu bar item ¬
                 "Hardware" of menu bar 1 of application process simulator_app_name
             delay 0.5
