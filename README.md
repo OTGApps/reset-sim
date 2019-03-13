@@ -2,7 +2,7 @@
 
 Adds a command to terminal that lets you easily reset the iOS Simulator
 
-Tested on Yosemite (GM Candidates 2 & 3). Any other Mac OS, YMMV.
+Tested on Mojave & Xcode 10. Any other Mac OS, YMMV.
 
 ## Installation
 
