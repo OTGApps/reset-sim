@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    reset-sim (1.1.1)
+    reset-sim (1.2.0)
 
 GEM
   remote: https://rubygems.org/
