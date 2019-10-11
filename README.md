@@ -2,7 +2,7 @@
 
 Adds a command to terminal that lets you easily reset the iOS Simulator
 
-Tested on Mojave & Xcode 10. Any other Mac OS, YMMV.
+Tested on Mojave & Xcode 11. Any other Mac OS, YMMV.
 
 ## Installation
 
@@ -20,11 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-Add your terminal application to System Preferences, Privacy, Accessibility options.
-
-Then run `reset-sim` to reset the simulator.
-
-![System Preferences](/screenshot.png)
+Run `reset-sim` to reset the simulator.
 
 ## Contributing
 

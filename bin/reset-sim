@@ -1,38 +1,3 @@
 #!/usr/bin/env ruby
 
-def osascript(script)
-  system 'osascript', *script.split(/\n/).map { |line| ['-e', line] }.flatten
-end
-
-osascript <<-END
-
-    -- assume most people are on xcode7 or greater
-    -- so try that first
-    set simulator_app_name to missing value
-    try
-        tell application "Simulator" to activate
-        set simulator_app_name to "Simulator"
-    on error number -1728
-        log "Trying legacy iOS Simulator application..."
-        try
-            tell application "iOS Simulator" to activate
-            set simulator_app_name to "iOS Simulator"
-        on error number -1728
-            log "No Simulator application installed"
-        end try
-    end try
-
-
-    if simulator_app_name is not equal to missing value
-        tell application "System Events"
-            click menu item ¬
-                "Erase All Content and Settings…" of menu 1 of menu bar item ¬
-                "Hardware" of menu bar 1 of application process simulator_app_name
-            delay 0.5
-            tell process simulator_app_name
-                keystroke tab
-                keystroke return
-            end tell
-        end tell
-    end if
-END
+system 'killall "Simulator" 2> /dev/null && xcrun simctl erase all'

@@ -8,20 +8,8 @@ Gem::Specification.new do |spec|
   spec.email         = ["mjar81@gmail.com"]
   spec.description   = "Adds a command to terminal that lets you easily reset the iOS Simulator"
   spec.summary       = "Resets the iOS simulator"
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/OTGApps/reset-sim"
   spec.license       = "MIT"
-
-  spec.post_install_message = <<-END
-
-********* IMPORTANT *********
-In order to work properly you must add your terminal application in
-System Preferences -> Privacy -> Accessibility options.
-
-Then run: reset-sim
-*****************************
-
-END
-
   spec.files         = []
   spec.require_paths = ["lib"]
   spec.executables   = ["reset-sim"]
